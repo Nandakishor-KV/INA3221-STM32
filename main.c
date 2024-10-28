@@ -1,3 +1,6 @@
+//This is a sample main.c file made for a power monitoring and cutoff device
+
+
 /* USER CODE BEGIN Header */
 /**
  ******************************************************************************
@@ -52,7 +55,6 @@ TIM_HandleTypeDef htim11;
 
 /* USER CODE BEGIN PV */
 
-//float i_limit = 0.3;
 float c3_p = 0;
 float oc_val = 0.3;
 
@@ -369,9 +371,6 @@ void lcd(){
 	lcd_send_string (I);
 	lcd_put_cur(1, 12);
 	lcd_send_string (P);
-
-	/*HAL_I2C_Mem_Read_DMA(&hi2c1, INA3221_Addr, REG_C3_BusV,
-				I2C_MEMADD_SIZE_8BIT, buf_v, 2);*/
 
 	INA3221_read();
 }
